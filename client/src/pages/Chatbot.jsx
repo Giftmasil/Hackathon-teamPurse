@@ -17,9 +17,37 @@ export default function Chatbot() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (prompt === "") {
+            toast({
+                title: 'Error',
+                description: 'Please fill the prompt',
+                status: 'error',
+                duration: 2000,
+                isClosable: true,
+            })
+            return
+        } else if (percentage === "") {
+            toast({
+                title: 'Error',
+                description: 'Please fill the percentage',
+                status: 'error',
+                duration: 2000,
+                isClosable: true,
+            })
+            return
+        } else if (sizeOfLand === "") {
+            toast({
+                title: 'Error',
+                description: 'Please fill the size of land',
+                status: 'error',
+                duration: 2000,
+                isClosable: true,
+            })
+            return
+        }
+
         setShowQuery(false);
         setShowResult(true);
-        // Here you can handle the form submission with the state values
         console.log(`${prompt}. The population growth rate is ${percentage} percent, size of land is ${sizeOfLand} square meters and the industries to be included are ${industries}`);
     };
 
@@ -76,7 +104,7 @@ export default function Chatbot() {
                         <i className="fa-solid fa-pen-to-square"></i>
                     </article>
                     <article className="flex flex-col">
-                        <label className="mb-3" htmlFor="prompt">Prompt</label>
+                        <label className="mb-3" htmlFor="prompt">Prompt <span className="text-[#dc4242]">*</span></label>
                         <input
                             id="prompt"
                             type="text"
@@ -88,7 +116,7 @@ export default function Chatbot() {
                     </article>
                     <h2 className="text-xl my-4 font-semibold">Details</h2>
                     <article className="flex flex-col mb-6">
-                        <label className="mb-3" htmlFor="percentage">Population growth rate (in percentage)</label>
+                        <label className="mb-3" htmlFor="percentage">Population growth rate (in percentage)  <span className="text-[#E494A2]">*</span></label>
                         <input
                             id="percentage"
                             className="px-6 py-4 mb-4 rounded-md"
@@ -99,7 +127,7 @@ export default function Chatbot() {
                         />
                     </article>
                     <article className="flex flex-col mb-6">
-                        <label className="mb-3" htmlFor="size-of-land">Size of the land (square meters)</label>
+                        <label className="mb-3" htmlFor="size-of-land">Size of the land (square meters)  <span className="text-[#E494A2]">*</span></label>
                         <input
                             id="size-of-land"
                             className="px-6 py-4 mb-4 rounded-md"
@@ -110,7 +138,7 @@ export default function Chatbot() {
                         />
                     </article>
                     <article className="flex flex-col mb-6">
-                        <label className="mb-3" htmlFor="industries">Type of industries (separate with a comma)</label>
+                        <label className="mb-3" htmlFor="industries">Type of industries (separate with comma)</label>
                         <input
                             id="industries"
                             className="px-6 py-4 mb-4 rounded-md"
