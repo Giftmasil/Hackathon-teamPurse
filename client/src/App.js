@@ -1,11 +1,18 @@
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Onbording from './pages/Onbording';
+import Chatbot from './pages/Chatbot';
 
 function App() {
 
   return (
-    <div className="ml-2 text-4xl">
-      <h1>Hello Hackathon</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Onbording />} />
+        <Route path="/chatbot" element={<Chatbot />} />
+        <Route path="*" element={<Onbording />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
