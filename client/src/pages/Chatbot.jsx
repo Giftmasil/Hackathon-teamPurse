@@ -41,7 +41,7 @@ export default function Chatbot() {
         try {
             const sustainabilityGoalsValues = sustainabilityGoals.map(goal => goal.value);
     
-            const response = await axios.post("http://127.0.0.1:5001/generate_plan", {
+            const response = await axios.post("https://hackathon-teampurse.onrender.com//generate_plan", {
                 land_area: landArea,
                 current_population: currentPopulation,
                 zoning: zoning,
@@ -85,7 +85,7 @@ export default function Chatbot() {
         e.preventDefault();
 
         try {
-            const response = await axios.post("http://192.168.100.46:5001/generate_plan", {
+            const response = await axios.post("https://hackathon-teampurse.onrender.com/generate_plan", {
                 land_area: landArea,
                 current_population: currentPopulation,
                 zoning: zoning,
