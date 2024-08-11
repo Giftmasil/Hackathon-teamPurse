@@ -6,3 +6,4 @@ gunicorn
 boto3
 python-dotenv
 numpy
+flask_cors
