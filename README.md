@@ -18,7 +18,7 @@ git add . && git commit -m "m" && git push aws
 ## Demo Website
 
 - 👉 Render : [Link to deployed backend site](https://hackathon-teampurse.onrender.com/)
-- 👉 Render : [Link to deployed frontend site but couldn't be intergrated with the ai](https://hackathon-team-purse.vercel.app/)
+- 👉 Vercel : [Link to deployed frontend site but couldn't be intergrated with the ai](https://hackathon-team-purse.vercel.app/)
 
 
 ## Run Locally
